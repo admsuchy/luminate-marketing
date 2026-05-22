@@ -10,7 +10,7 @@ const WEB3FORMS_KEY = import.meta.env.PUBLIC_WEB3FORMS_KEY || '';
 
 <Layout
   title="Contact — Luminate Energy"
-  description="Get in touch with Luminate Energy for a free, no-pressure residential solar consultation in Texas."
+  description="Get in touch with Luminate Energy for a free, no-pressure residential solar consultation in California, Texas, Arkansas, Florida, Missouri, or Georgia."
 >
   <!-- HERO -->
   <section class="container-prose pt-20 md:pt-32 pb-12 md:pb-16">
@@ -129,8 +129,8 @@ const WEB3FORMS_KEY = import.meta.env.PUBLIC_WEB3FORMS_KEY || '';
       <aside class="space-y-10 md:pt-2">
         <div>
           <h3 class="text-xs uppercase tracking-widest text-brand-muted mb-3 font-medium">Email</h3>
-          <a href="mailto:hello@luminate.solar" class="text-lg md:text-xl hover:text-brand-primary transition-colors">
-            hello@luminate.solar
+          <a href="mailto:support@luminate.solar" class="text-lg md:text-xl hover:text-brand-primary transition-colors">
+            support@luminate.solar
           </a>
         </div>
 
@@ -144,7 +144,8 @@ const WEB3FORMS_KEY = import.meta.env.PUBLIC_WEB3FORMS_KEY || '';
         <div>
           <h3 class="text-xs uppercase tracking-widest text-brand-muted mb-3 font-medium">Service Area</h3>
           <p class="text-base md:text-lg text-brand-muted leading-relaxed">
-            Serving homeowners across Texas.
+            California &middot; Texas &middot; Arkansas <br />
+            Florida &middot; Missouri &middot; Georgia
           </p>
         </div>
 
@@ -181,7 +182,7 @@ const WEB3FORMS_KEY = import.meta.env.PUBLIC_WEB3FORMS_KEY || '';
       // If access key missing, show fallback mailto guidance instead of hitting the API.
       if (!accessKeyInput?.value) {
         status.className = 'block text-base text-brand-ink p-4 bg-brand-primary/10 border border-brand-primary/20 rounded-lg';
-        status.innerHTML = 'Form not yet wired up. Please email <a href="mailto:hello@luminate.solar" class="underline">hello@luminate.solar</a> directly while we finish setup.';
+        status.innerHTML = 'Form not yet wired up. Please email <a href="mailto:support@luminate.solar" class="underline">support@luminate.solar</a> directly while we finish setup.';
         return;
       }
 
@@ -205,7 +206,7 @@ const WEB3FORMS_KEY = import.meta.env.PUBLIC_WEB3FORMS_KEY || '';
         }
       } catch (err) {
         status.className = 'block text-base text-red-700 p-4 bg-red-50 border border-red-200 rounded-lg';
-        status.innerHTML = 'Something went wrong. Please email <a href="mailto:hello@luminate.solar" class="underline">hello@luminate.solar</a> and we\'ll get back to you.';
+        status.innerHTML = 'Something went wrong. Please email <a href="mailto:support@luminate.solar" class="underline">support@luminate.solar</a> and we\'ll get back to you.';
       } finally {
         if (submitBtn) submitBtn.disabled = false;
         if (label) label.textContent = 'Send message';

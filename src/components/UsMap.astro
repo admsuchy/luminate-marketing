@@ -1,0 +1,105 @@
+---
+import data from '../data/us-states.json';
+
+const ACTIVE = new Set(['CA', 'TX', 'AR', 'FL', 'MO', 'GA']);
+const { width, height, states } = data as {
+  width: number;
+  height: number;
+  states: { code: string; name: string; d: string }[];
+};
+
+const activeNames = states
+  .filter((s) => ACTIVE.has(s.code))
+  .map((s) => s.name);
+---
+
+<figure
+  class="us-map relative w-full max-w-3xl mx-auto"
+  role="img"
+  aria-label={`Map of the United States highlighting the ${activeNames.length} states served by Luminate Energy: ${activeNames.join(', ')}.`}
+>
+  <svg
+    viewBox={`0 0 ${width} ${height}`}
+    xmlns="http://www.w3.org/2000/svg"
+    class="block w-full h-auto"
+    aria-hidden="true"
+  >
+    <defs>
+      <filter id="us-map-glow" x="-20%" y="-20%" width="140%" height="140%">
+        <feGaussianBlur stdDeviation="6" result="blur" />
+        <feMerge>
+          <feMergeNode in="blur" />
+          <feMergeNode in="SourceGraphic" />
+        </feMerge>
+      </filter>
+    </defs>
+
+    <g class="states-inactive">
+      {states.filter((s) => !ACTIVE.has(s.code)).map((s) => (
+        <path d={s.d} data-state={s.code}>
+          <title>{s.name}</title>
+        </path>
+      ))}
+    </g>
+
+    <g class="states-active" filter="url(#us-map-glow)">
+      {states.filter((s) => ACTIVE.has(s.code)).map((s) => (
+        <path d={s.d} data-state={s.code} class="state-active">
+          <title>{s.name}</title>
+        </path>
+      ))}
+    </g>
+  </svg>
+
+  <figcaption class="mt-8 flex flex-wrap items-center justify-center gap-x-6 gap-y-2 text-xs uppercase tracking-[0.22em] text-brand-muted">
+    <span class="inline-flex items-center gap-2">
+      <span class="inline-block h-3 w-3 rounded-sm bg-brand-primary"></span>
+      Where we install
+    </span>
+    <span class="inline-flex items-center gap-2">
+      <span class="inline-block h-3 w-3 rounded-sm border border-brand-line bg-transparent"></span>
+      Coming soon
+    </span>
+  </figcaption>
+</figure>
+
+<style>
+  .us-map svg path {
+    transition: fill 0.3s ease, opacity 0.3s ease;
+  }
+
+  .states-inactive path {
+    fill: transparent;
+    stroke: rgba(10, 10, 10, 0.18);
+    stroke-width: 0.8;
+    stroke-linejoin: round;
+  }
+
+  .states-inactive path:hover {
+    fill: rgba(10, 10, 10, 0.04);
+  }
+
+  .states-active path {
+    fill: var(--brand-primary, #FF7F00);
+    stroke: var(--brand-primary, #FF7F00);
+    stroke-width: 0.8;
+    stroke-linejoin: round;
+    animation: usGlow 3.6s ease-in-out infinite;
+    transform-origin: center;
+  }
+
+  .states-active path:hover {
+    fill: #ffa040;
+    cursor: default;
+  }
+
+  @keyframes usGlow {
+    0%, 100% { opacity: 0.95; }
+    50%      { opacity: 1; }
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    .states-active path { animation: none; }
+    .us-map svg path { transition: none; }
+  }
+</style>

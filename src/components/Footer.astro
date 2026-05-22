@@ -37,25 +37,34 @@ const year = new Date().getFullYear();
         </li>
         <li>
           <a
-            href="mailto:hello@luminate.solar"
+            href="mailto:support@luminate.solar"
             class="hover:text-brand-primary transition-colors"
-          >hello@luminate.solar</a>
+          >support@luminate.solar</a>
         </li>
       </ul>
     </div>
 
     <div>
       <h4 class="text-xs uppercase tracking-widest text-brand-muted mb-4 font-medium">Service Area</h4>
-      <p class="text-sm text-brand-muted leading-relaxed">
-        Serving Texas homeowners ready to take control of their energy.
-      </p>
+      <ul class="space-y-2 text-sm text-brand-muted">
+        <li>California</li>
+        <li>Texas</li>
+        <li>Arkansas</li>
+        <li>Florida</li>
+        <li>Missouri</li>
+        <li>Georgia</li>
+      </ul>
     </div>
   </div>
 
   <div class="hairline-top">
-    <div class="container-prose py-6 flex flex-col md:flex-row items-start md:items-center justify-between gap-2 text-xs text-brand-muted">
+    <div class="container-prose py-6 flex flex-col md:flex-row items-start md:items-center justify-between gap-3 text-xs text-brand-muted">
       <p>&copy; {year} Luminate Energy LLC. All rights reserved.</p>
-      <p>Built with care in Texas.</p>
+      <nav class="flex items-center gap-5" aria-label="Legal">
+        <a href="/privacy/" class="hover:text-brand-primary transition-colors">Privacy</a>
+        <a href="/terms/" class="hover:text-brand-primary transition-colors">Terms</a>
+        <a href="/contact/" class="hover:text-brand-primary transition-colors">Contact</a>
+      </nav>
     </div>
   </div>
 </footer>

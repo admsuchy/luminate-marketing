@@ -119,7 +119,7 @@ npm run build
 
 ## Wiring the contact form (Web3Forms)
 
-1. https://web3forms.com/ → enter `hello@luminate.solar` (or whichever inbox should receive leads) → submit → check inbox for **access key**
+1. https://web3forms.com/ → enter `support@luminate.solar` (or whichever inbox should receive leads) → submit → check inbox for **access key**
 2. In Cloudflare Pages → project → **Settings** → **Environment variables** → add:
    - Variable name: `PUBLIC_WEB3FORMS_KEY`
    - Value: the access key from Web3Forms

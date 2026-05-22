@@ -10,8 +10,8 @@ interface Props {
 }
 
 const {
-  title = 'Luminate Energy — Clean, Renewable Solar for Texas Homeowners',
-  description = 'Luminate Energy installs residential solar across Texas with transparent education, high-trust craftsmanship, and a mission to change lives through clean energy.',
+  title = 'Luminate Energy — Clean, Renewable Solar for American Homeowners',
+  description = 'Luminate Energy installs residential solar across six states — California, Texas, Arkansas, Florida, Missouri, and Georgia — with transparent education, high-trust craftsmanship, and a mission to change lives through clean energy.',
 } = Astro.props;
 
 const canonical = new URL(Astro.url.pathname, Astro.site).toString();
@@ -23,7 +23,10 @@ const canonical = new URL(Astro.url.pathname, Astro.site).toString();
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="generator" content={Astro.generator} />
-    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <link rel="icon" href="/favicon.ico?v=3" sizes="any" />
+    <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32.png?v=3" />
+    <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16.png?v=3" />
+    <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png?v=3" />
     <link rel="canonical" href={canonical} />
 
     <title>{title}</title>

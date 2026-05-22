@@ -2,45 +2,12 @@
 import Layout from '../layouts/Layout.astro';
 import CTAButton from '../components/CTAButton.astro';
 import SectionEyebrow from '../components/SectionEyebrow.astro';
-import ValueCard from '../components/ValueCard.astro';
-
-const values = [
-  {
-    title: 'Integrity & Trust',
-    description: 'We build lasting relationships through honest, transparent communication and always doing what\'s right for our customers.',
-    icon: '<svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>',
-  },
-  {
-    title: 'Excellence',
-    description: 'We set high standards for ourselves and deliver exceptional service at every touchpoint of the customer journey.',
-    icon: '<svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><circle cx="12" cy="12" r="6"/><circle cx="12" cy="12" r="2"/></svg>',
-  },
-  {
-    title: 'Growth',
-    description: 'We invest in our team\'s development and celebrate wins together. Your success is our success.',
-    icon: '<svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="22 7 13.5 15.5 8.5 10.5 2 17"/><polyline points="16 7 22 7 22 13"/></svg>',
-  },
-  {
-    title: 'Community',
-    description: 'Every installation changes lives. We\'re not just selling energy — we\'re building a sustainable future together.',
-    icon: '<svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg>',
-  },
-  {
-    title: 'Innovation',
-    description: 'We embrace cutting-edge technology and creative solutions to make renewable energy accessible to everyone.',
-    icon: '<svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M9 18h6"/><path d="M10 22h4"/><path d="M12 2a7 7 0 0 0-4 12.74V17h8v-2.26A7 7 0 0 0 12 2z"/></svg>',
-  },
-  {
-    title: 'Sustainability',
-    description: 'We prioritize environmental impact in every decision, helping families reduce their carbon footprint while saving money.',
-    icon: '<svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M11 20A7 7 0 0 1 4 13c0-3.87 3.13-7 7-7h9a7 7 0 0 1-7 7"/><path d="M11 20v-7"/></svg>',
-  },
-];
+import UsMap from '../components/UsMap.astro';
 ---
 
 <Layout
   title="About — Luminate Energy"
-  description="Luminate Energy is a Texas-based residential solar installer on a mission to change lives through clean, renewable energy."
+  description="Luminate Energy is a multi-state residential solar installer serving California, Texas, Arkansas, Florida, Missouri, and Georgia — on a mission to change lives through clean, renewable energy."
 >
   <!-- HERO -->
   <section class="container-prose pt-20 md:pt-32 pb-16 md:pb-24">
@@ -50,17 +17,40 @@ const values = [
       <span class="accent-serif text-brand-primary">feel like home.</span>
     </h1>
     <p class="text-lg md:text-2xl text-brand-muted max-w-2xl leading-snug">
-      Luminate Energy is a Texas-based residential solar company built on a simple
-      idea: families deserve clean power, honest answers, and craftsmanship they
-      can trust.
+      Luminate Energy is a residential solar company serving California, Texas,
+      Arkansas, Florida, Missouri, and Georgia — built on a simple idea: families
+      deserve clean power, honest answers, and craftsmanship they can trust.
     </p>
+  </section>
+
+  <!-- FOOTPRINT MAP -->
+  <section class="hairline-top">
+    <div class="container-prose py-20 md:py-32">
+      <div class="grid md:grid-cols-[1fr_1.6fr] gap-12 md:gap-20 items-start">
+        <div class="md:sticky md:top-28 h-fit">
+          <SectionEyebrow label="Footprint" number="02" />
+          <h2 class="text-3xl md:text-5xl mb-6">
+            Six states. <br />
+            <span class="accent-serif text-brand-primary">Growing fast.</span>
+          </h2>
+          <p class="text-base md:text-lg text-brand-muted leading-relaxed max-w-md">
+            We design, install, and support residential solar systems across
+            California, Texas, Arkansas, Florida, Missouri, and Georgia — and
+            we're not stopping there.
+          </p>
+        </div>
+        <div>
+          <UsMap />
+        </div>
+      </div>
+    </div>
   </section>
 
   <!-- ORIGIN STORY -->
   <section class="hairline-top">
     <div class="container-prose py-20 md:py-28 grid md:grid-cols-[1fr_1.6fr] gap-12 md:gap-20">
       <div class="md:sticky md:top-28 h-fit">
-        <SectionEyebrow label="Our story" number="02" />
+        <SectionEyebrow label="Our story" number="03" />
         <h2 class="text-3xl md:text-5xl">
           A different kind of <br />
           <span class="accent-serif text-brand-primary">solar company.</span>
@@ -89,29 +79,6 @@ const values = [
     </div>
   </section>
 
-  <!-- VALUES -->
-  <section class="hairline-top bg-white/40">
-    <div class="container-prose py-20 md:py-32">
-      <div class="flex flex-col md:flex-row md:items-end md:justify-between gap-6 mb-12 md:mb-16">
-        <div>
-          <SectionEyebrow label="Core values" number="03" />
-          <h2 class="text-4xl md:text-5xl lg:text-6xl max-w-2xl">
-            The principles that <br /><span class="accent-serif text-brand-primary">guide everything.</span>
-          </h2>
-        </div>
-        <p class="text-base md:text-lg text-brand-muted max-w-md">
-          Six values shape every install, every conversation, every follow-up call. They're not posters on a wall — they're the job description.
-        </p>
-      </div>
-
-      <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-4 md:gap-6">
-        {values.map((v, i) => (
-          <ValueCard title={v.title} description={v.description} icon={v.icon} index={i} />
-        ))}
-      </div>
-    </div>
-  </section>
-
   <!-- TEAM TEASER -->
   <section class="hairline-top container-prose py-20 md:py-28">
     <div class="grid md:grid-cols-[1.6fr_1fr] gap-12 md:gap-20 items-center">
@@ -127,20 +94,16 @@ const values = [
           system keeps performing. No call-center handoffs, no ghosting.
         </p>
       </div>
-      <div class="aspect-square bg-gradient-to-br from-brand-primary/20 via-brand-primary/5 to-transparent rounded-3xl border border-brand-line flex items-center justify-center">
-        <svg viewBox="0 0 64 64" class="w-32 h-32" aria-hidden="true">
-          <circle cx="32" cy="32" r="10" fill="#FF7F00" />
-          <g stroke="#FF7F00" stroke-width="3.5" stroke-linecap="round">
-            <line x1="32" y1="4"  x2="32" y2="14" />
-            <line x1="32" y1="50" x2="32" y2="60" />
-            <line x1="4"  y1="32" x2="14" y2="32" />
-            <line x1="50" y1="32" x2="60" y2="32" />
-            <line x1="12" y1="12" x2="19" y2="19" />
-            <line x1="45" y1="45" x2="52" y2="52" />
-            <line x1="52" y1="12" x2="45" y2="19" />
-            <line x1="19" y1="45" x2="12" y2="52" />
-          </g>
-        </svg>
+      <div class="flex items-center justify-center">
+        <img
+          src="/logo.png"
+          alt="Luminate Energy"
+          width="3163"
+          height="837"
+          class="w-full max-w-md h-auto filter brightness-0"
+          loading="lazy"
+          decoding="async"
+        />
       </div>
     </div>
   </section>
