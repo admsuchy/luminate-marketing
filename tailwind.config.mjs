@@ -16,7 +16,7 @@ export default {
       },
       fontFamily: {
         display: ['"Helvetica Neue"', 'Helvetica', 'Arial', 'sans-serif'],
-        accent: ['"Instrument Serif"', 'Georgia', 'serif'],
+        accent: ['"URW Gothic"', '"Century Gothic"', 'CenturyGothic', 'AppleGothic', 'sans-serif'],
         body: ['"Inter"', '"Helvetica Neue"', 'Helvetica', 'Arial', 'sans-serif'],
       },
       letterSpacing: {

@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Instrument+Serif:ital@0;1&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=URW+Gothic:wght@400;700&display=swap');
 
 @tailwind base;
 @tailwind components;
@@ -59,9 +59,10 @@
   }
 
   .accent-serif {
-    font-family: 'Instrument Serif', Georgia, serif;
+    font-family: 'URW Gothic', 'Century Gothic', 'CenturyGothic', 'AppleGothic', sans-serif;
     font-weight: 400;
-    font-style: italic;
+    font-style: normal;
+    font-size: 0.9888em;
     letter-spacing: 0;
   }
 
