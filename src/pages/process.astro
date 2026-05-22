@@ -1,0 +1,157 @@
+---
+import Layout from '../layouts/Layout.astro';
+import CTAButton from '../components/CTAButton.astro';
+import SectionEyebrow from '../components/SectionEyebrow.astro';
+
+const steps = [
+  {
+    title: 'Consultation',
+    timing: 'About 30 minutes',
+    body: 'We start with a no-pressure conversation about your home, your energy bill, and your goals. We answer every question — even the ones the industry would rather you didn\'t ask.',
+    detail: [
+      'Review your current electric bill',
+      'Walk through how solar actually works',
+      'Talk through ownership vs. financing options',
+      'Decide together if next steps make sense',
+    ],
+  },
+  {
+    title: 'Custom Design',
+    timing: 'A few days',
+    body: 'Our engineers build a system tailored to your specific roof — orientation, pitch, shade pattern, and the way your household actually uses power.',
+    detail: [
+      'Satellite + on-site roof assessment',
+      'Shade analysis throughout the year',
+      'System sized to your real usage',
+      'Production estimates with honest assumptions',
+    ],
+  },
+  {
+    title: 'Installation & Interconnection',
+    timing: '1-2 days on-site',
+    body: 'Permits, install, and utility paperwork — handled end to end. Our crews are in and out cleanly, and we coordinate every inspection so you don\'t have to.',
+    detail: [
+      'Permitting + HOA approvals (if needed)',
+      'Roof mount + panel installation',
+      'Electrical + inverter wiring',
+      'City inspection + utility interconnection',
+    ],
+  },
+  {
+    title: 'Watch Savings Grow',
+    timing: '25+ years',
+    body: 'Flip the switch and your meter starts spinning backward. You watch your bill drop. We stay in your corner with monitoring, support, and warranty for the long haul.',
+    detail: [
+      'Production monitoring guidance',
+      'Same team for service + warranty calls',
+      'Manufacturer warranty coordination',
+      'Honest answers as long as you own the home',
+    ],
+  },
+];
+---
+
+<Layout
+  title="Process — Luminate Energy"
+  description="From consultation to interconnection, here\'s every step of how Luminate Energy installs residential solar in Texas."
+>
+  <!-- HERO -->
+  <section class="container-prose pt-20 md:pt-32 pb-16 md:pb-24">
+    <SectionEyebrow label="Process" number="01" />
+    <h1 class="display-xl text-5xl md:text-7xl lg:text-8xl max-w-4xl mb-8">
+      From curious to <br />
+      <span class="accent-serif text-brand-primary">powered on.</span>
+    </h1>
+    <p class="text-lg md:text-2xl text-brand-muted max-w-2xl leading-snug">
+      Four clear steps. Zero pressure. We handle the heavy lifting so you can
+      focus on enjoying the result.
+    </p>
+  </section>
+
+  <!-- STEPS -->
+  <section class="hairline-top">
+    {steps.map((step, i) => (
+      <article class:list={[
+        'border-b border-brand-line',
+        i % 2 === 1 ? 'bg-white/40' : '',
+      ]}>
+        <div class="container-prose py-20 md:py-32 grid md:grid-cols-[auto_1fr_1.4fr] gap-8 md:gap-16 items-start">
+          <div class="display-xl text-7xl md:text-9xl text-brand-primary leading-none">
+            0{i + 1}
+          </div>
+          <div class="md:sticky md:top-28 h-fit">
+            <p class="text-xs uppercase tracking-[0.22em] text-brand-muted mb-3">{step.timing}</p>
+            <h2 class="text-3xl md:text-5xl leading-tight">
+              {step.title}<span class="text-brand-primary">.</span>
+            </h2>
+          </div>
+          <div>
+            <p class="text-base md:text-xl text-brand-muted leading-relaxed mb-8 max-w-prose">
+              {step.body}
+            </p>
+            <ul class="space-y-3">
+              {step.detail.map((d) => (
+                <li class="flex items-start gap-3 text-sm md:text-base">
+                  <span class="mt-2 h-1 w-3 bg-brand-primary flex-shrink-0"></span>
+                  <span>{d}</span>
+                </li>
+              ))}
+            </ul>
+          </div>
+        </div>
+      </article>
+    ))}
+  </section>
+
+  <!-- FAQ TEASER -->
+  <section class="container-prose py-24 md:py-32">
+    <div class="grid md:grid-cols-[1fr_1.4fr] gap-12 md:gap-20">
+      <div>
+        <SectionEyebrow label="Common questions" number="05" />
+        <h2 class="text-3xl md:text-5xl">
+          What homeowners <br /><span class="accent-serif text-brand-primary">ask us most.</span>
+        </h2>
+      </div>
+      <div class="space-y-px">
+        {[
+          {
+            q: 'How long does the whole process take?',
+            a: 'From consultation to flipping the switch, most projects land in 6-12 weeks — the bulk of that is permitting and utility interconnection, not the install itself.',
+          },
+          {
+            q: 'Do I have to put money down?',
+            a: 'No. We offer $0-down financing options for qualified homeowners. We\'ll walk you through every option transparently so you can pick what works.',
+          },
+          {
+            q: 'What happens if my roof needs work?',
+            a: 'We\'ll spot that during the assessment. If your roof is near end-of-life, we\'ll be upfront and recommend addressing it before install — we won\'t put panels on a roof that won\'t last.',
+          },
+          {
+            q: 'What about Texas storms and hail?',
+            a: 'Modern panels are rated for serious impact. Your homeowner\'s insurance typically covers the system, and we coordinate any warranty claims with you.',
+          },
+        ].map((item) => (
+          <details class="group border-b border-brand-line py-6 cursor-pointer">
+            <summary class="flex justify-between items-start gap-6 list-none">
+              <h3 class="text-lg md:text-xl pr-4 leading-snug">{item.q}</h3>
+              <span class="text-brand-primary text-2xl leading-none transition-transform group-open:rotate-45 flex-shrink-0">+</span>
+            </summary>
+            <p class="mt-4 text-base text-brand-muted leading-relaxed max-w-prose">
+              {item.a}
+            </p>
+          </details>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <!-- FINAL CTA -->
+  <section class="hairline-top">
+    <div class="container-prose py-24 md:py-32 text-center">
+      <h2 class="text-4xl md:text-6xl mb-8 max-w-3xl mx-auto">
+        Ready to <span class="accent-serif text-brand-primary">start step one?</span>
+      </h2>
+      <CTAButton href="/contact/" variant="primary" size="lg">Book your consultation</CTAButton>
+    </div>
+  </section>
+</Layout>

@@ -1,0 +1,43 @@
+---
+interface Props {
+  href: string;
+  variant?: 'primary' | 'secondary' | 'ghost';
+  class?: string;
+  size?: 'sm' | 'md' | 'lg';
+}
+const {
+  href,
+  variant = 'primary',
+  size = 'md',
+  class: className = '',
+} = Astro.props;
+
+const sizeClasses = {
+  sm: 'px-4 py-2 text-sm',
+  md: 'px-6 py-3 text-base',
+  lg: 'px-8 py-4 text-base md:text-lg',
+};
+
+const variantClasses = {
+  primary:
+    'bg-brand-ink text-brand-paper hover:bg-brand-primary hover:text-brand-ink',
+  secondary:
+    'bg-brand-primary text-brand-ink hover:bg-brand-primaryDark hover:text-brand-paper',
+  ghost:
+    'bg-transparent text-brand-ink border border-brand-ink hover:bg-brand-ink hover:text-brand-paper',
+};
+
+const isExternal = href.startsWith('http');
+---
+
+<a
+  href={href}
+  class={`inline-flex items-center justify-center gap-2 rounded-full font-medium transition-all duration-200 ${sizeClasses[size]} ${variantClasses[variant]} ${className}`}
+  {...isExternal ? { target: '_blank', rel: 'noopener noreferrer' } : {}}
+>
+  <slot />
+  <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+    <line x1="5" y1="12" x2="19" y2="12"></line>
+    <polyline points="12 5 19 12 12 19"></polyline>
+  </svg>
+</a>

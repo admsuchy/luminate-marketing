@@ -1,0 +1,162 @@
+---
+import Layout from '../layouts/Layout.astro';
+import CTAButton from '../components/CTAButton.astro';
+import SectionEyebrow from '../components/SectionEyebrow.astro';
+
+const valueProps = [
+  {
+    label: 'Transparent',
+    title: 'No pressure. No surprises.',
+    desc: 'Clear pricing, honest timelines, and an education-first approach so you can make a confident decision.',
+  },
+  {
+    label: 'Trusted',
+    title: 'Craftsmanship that lasts.',
+    desc: 'High-trust, high-quality installs by people who treat your home like their own.',
+  },
+  {
+    label: 'Texas-grown',
+    title: 'Built for our climate.',
+    desc: 'Systems designed for Texas sun and Texas storms — engineered to perform for decades.',
+  },
+];
+---
+
+<Layout
+  title="Luminate Energy — Residential Solar for Texas Homeowners"
+  description="Luminate Energy installs residential solar across Texas with transparency, craftsmanship, and a mission to change lives through clean energy."
+>
+  <!-- HERO -->
+  <section class="relative overflow-hidden">
+    <div class="absolute inset-0 -z-10 pointer-events-none">
+      <div class="absolute -top-40 -right-20 w-[40rem] h-[40rem] bg-brand-primary/10 rounded-full blur-3xl"></div>
+      <div class="absolute top-1/3 -left-32 w-[30rem] h-[30rem] bg-brand-primary/5 rounded-full blur-3xl"></div>
+    </div>
+
+    <div class="container-prose pt-20 md:pt-32 pb-20 md:pb-32">
+      <div class="max-w-4xl">
+        <p class="text-xs uppercase tracking-[0.22em] text-brand-muted mb-6 md:mb-10 animate-fade-in">
+          Luminate Energy &middot; Residential Solar &middot; Texas
+        </p>
+        <h1 class="display-xl text-5xl sm:text-6xl md:text-7xl lg:text-8xl mb-6 md:mb-8 animate-fade-up">
+          Power your home <br />
+          <span class="accent-serif text-brand-primary text-[1.05em]">with the sun.</span>
+        </h1>
+        <p class="text-lg md:text-2xl text-brand-muted max-w-2xl leading-snug mb-10 md:mb-12 animate-fade-up" style="animation-delay:80ms">
+          We design and install residential solar systems built for the long haul —
+          guided by clear education, honest pricing, and craftsmanship you can trust.
+        </p>
+        <div class="flex flex-wrap items-center gap-3 md:gap-4 animate-fade-up" style="animation-delay:160ms">
+          <CTAButton href="/contact/" variant="primary" size="lg">Get your free quote</CTAButton>
+          <CTAButton href="/process/" variant="ghost" size="lg">See how it works</CTAButton>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- STATS BAND -->
+  <section class="hairline-top hairline-bottom">
+    <div class="container-prose py-10 md:py-14 grid grid-cols-2 md:grid-cols-4 gap-8 md:gap-4">
+      <div>
+        <div class="display-xl text-4xl md:text-5xl text-brand-ink mb-2">25+</div>
+        <div class="text-xs uppercase tracking-widest text-brand-muted">Year system lifespan</div>
+      </div>
+      <div>
+        <div class="display-xl text-4xl md:text-5xl text-brand-ink mb-2">$0</div>
+        <div class="text-xs uppercase tracking-widest text-brand-muted">Down options available</div>
+      </div>
+      <div>
+        <div class="display-xl text-4xl md:text-5xl text-brand-ink mb-2">100%</div>
+        <div class="text-xs uppercase tracking-widest text-brand-muted">Clean energy</div>
+      </div>
+      <div>
+        <div class="display-xl text-4xl md:text-5xl text-brand-ink mb-2">TX</div>
+        <div class="text-xs uppercase tracking-widest text-brand-muted">Locally installed</div>
+      </div>
+    </div>
+  </section>
+
+  <!-- WHAT WE DO -->
+  <section class="container-prose py-20 md:py-32">
+    <div class="grid md:grid-cols-[1fr_1.4fr] gap-12 md:gap-20 items-start">
+      <div class="md:sticky md:top-28">
+        <SectionEyebrow label="What we do" number="01" />
+        <h2 class="text-4xl md:text-5xl lg:text-6xl mb-6">
+          Residential solar, <br />
+          <span class="accent-serif text-brand-primary">done right.</span>
+        </h2>
+        <p class="text-base md:text-lg text-brand-muted leading-relaxed max-w-md">
+          From the first conversation to the day your system flips on, we
+          handle every step in-house — with people who actually pick up the
+          phone.
+        </p>
+      </div>
+
+      <div class="space-y-px">
+        {valueProps.map((item, i) => (
+          <div class="group py-8 md:py-10 border-t border-brand-line first:border-t-0">
+            <div class="flex items-baseline justify-between mb-3 md:mb-4">
+              <span class="text-xs uppercase tracking-[0.22em] text-brand-primary font-medium">{item.label}</span>
+              <span class="text-xs font-mono text-brand-muted tabular-nums">0{i + 1}</span>
+            </div>
+            <h3 class="text-2xl md:text-3xl mb-3 group-hover:text-brand-primary transition-colors">
+              {item.title}
+            </h3>
+            <p class="text-base md:text-lg text-brand-muted leading-relaxed max-w-xl">
+              {item.desc}
+            </p>
+          </div>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <!-- MISSION QUOTE -->
+  <section class="hairline-top hairline-bottom bg-brand-ink text-brand-paper">
+    <div class="container-prose py-24 md:py-36 text-center">
+      <p class="text-xs uppercase tracking-[0.22em] text-brand-primary mb-8">Our mission</p>
+      <p class="accent-serif text-3xl md:text-5xl lg:text-6xl leading-tight max-w-4xl mx-auto">
+        "On a mission to change lives through clean, renewable energy."
+      </p>
+    </div>
+  </section>
+
+  <!-- PROCESS PEEK -->
+  <section class="container-prose py-20 md:py-32">
+    <SectionEyebrow label="How it works" number="02" />
+    <div class="flex flex-col md:flex-row md:items-end md:justify-between gap-6 mb-12 md:mb-16">
+      <h2 class="text-4xl md:text-5xl lg:text-6xl max-w-2xl">
+        Four steps from <br /><span class="accent-serif text-brand-primary">curious</span> to powered on.
+      </h2>
+      <CTAButton href="/process/" variant="ghost" size="md">Walk through the process</CTAButton>
+    </div>
+
+    <ol class="grid md:grid-cols-4 gap-px bg-brand-line border border-brand-line rounded-2xl overflow-hidden">
+      {[
+        { n: '01', t: 'Consultation', d: 'A no-pressure conversation about your home, your goals, and your bill.' },
+        { n: '02', t: 'Custom design', d: 'A system engineered for your roof, your shade, and your energy use.' },
+        { n: '03', t: 'Installation', d: 'Permits, install, and utility interconnection — handled end to end.' },
+        { n: '04', t: 'Watch savings grow', d: 'You flip the switch. Your meter spins backward. We stay in your corner.' },
+      ].map((step) => (
+        <li class="bg-brand-paper p-8 md:p-10 hover:bg-white transition-colors">
+          <div class="text-xs font-mono text-brand-primary tabular-nums mb-4">{step.n}</div>
+          <h3 class="text-xl md:text-2xl mb-3">{step.t}</h3>
+          <p class="text-sm text-brand-muted leading-relaxed">{step.d}</p>
+        </li>
+      ))}
+    </ol>
+  </section>
+
+  <!-- FINAL CTA -->
+  <section class="hairline-top">
+    <div class="container-prose py-24 md:py-36 text-center">
+      <h2 class="text-4xl md:text-6xl lg:text-7xl mb-8 max-w-3xl mx-auto">
+        Ready to <span class="accent-serif text-brand-primary">go solar?</span>
+      </h2>
+      <p class="text-lg md:text-xl text-brand-muted max-w-xl mx-auto mb-10">
+        A 15-minute conversation is all it takes to see if solar makes sense for your home.
+      </p>
+      <CTAButton href="/contact/" variant="primary" size="lg">Get your free quote</CTAButton>
+    </div>
+  </section>
+</Layout>

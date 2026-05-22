@@ -1,0 +1,87 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Instrument+Serif:ital@0;1&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --brand-primary: #FF7F00;
+    --brand-ink: #0A0A0A;
+    --brand-paper: #FAFAF8;
+    --brand-muted: #6B6B6B;
+    --brand-line: #E5E5E0;
+  }
+
+  html {
+    scroll-behavior: smooth;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    text-rendering: optimizeLegibility;
+  }
+
+  body {
+    font-family: 'Inter', 'Helvetica Neue', Helvetica, Arial, sans-serif;
+    background-color: var(--brand-paper);
+    color: var(--brand-ink);
+    font-weight: 400;
+    line-height: 1.5;
+    overflow-x: hidden;
+  }
+
+  h1, h2, h3, h4, h5, h6 {
+    font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+    font-weight: 700;
+    letter-spacing: -0.045em;
+    line-height: 1.05;
+    color: var(--brand-ink);
+  }
+
+  ::selection {
+    background-color: var(--brand-primary);
+    color: var(--brand-ink);
+  }
+
+  /* Focus ring */
+  :focus-visible {
+    outline: 2px solid var(--brand-primary);
+    outline-offset: 3px;
+    border-radius: 4px;
+  }
+}
+
+@layer components {
+  .display-xl {
+    font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+    font-weight: 700;
+    letter-spacing: -0.055em;
+    line-height: 0.95;
+  }
+
+  .accent-serif {
+    font-family: 'Instrument Serif', Georgia, serif;
+    font-weight: 400;
+    font-style: italic;
+    letter-spacing: 0;
+  }
+
+  .container-prose {
+    max-width: 72rem;
+    margin-inline: auto;
+    padding-inline: 1.5rem;
+  }
+
+  @media (min-width: 768px) {
+    .container-prose {
+      padding-inline: 3rem;
+    }
+  }
+
+  .hairline-top {
+    border-top: 1px solid var(--brand-line);
+  }
+
+  .hairline-bottom {
+    border-bottom: 1px solid var(--brand-line);
+  }
+}

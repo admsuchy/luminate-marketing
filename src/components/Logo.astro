@@ -1,0 +1,33 @@
+---
+interface Props {
+  class?: string;
+  showWordmark?: boolean;
+}
+const { class: className = '', showWordmark = true } = Astro.props;
+---
+
+<a href="/" class={`inline-flex items-center gap-2.5 group ${className}`} aria-label="Luminate Energy home">
+  <svg
+    xmlns="http://www.w3.org/2000/svg"
+    viewBox="0 0 64 64"
+    class="h-7 w-7 transition-transform duration-300 group-hover:rotate-45"
+    aria-hidden="true"
+  >
+    <circle cx="32" cy="32" r="10" fill="#FF7F00" />
+    <g stroke="#FF7F00" stroke-width="3.5" stroke-linecap="round">
+      <line x1="32" y1="4"  x2="32" y2="14" />
+      <line x1="32" y1="50" x2="32" y2="60" />
+      <line x1="4"  y1="32" x2="14" y2="32" />
+      <line x1="50" y1="32" x2="60" y2="32" />
+      <line x1="12" y1="12" x2="19" y2="19" />
+      <line x1="45" y1="45" x2="52" y2="52" />
+      <line x1="52" y1="12" x2="45" y2="19" />
+      <line x1="19" y1="45" x2="12" y2="52" />
+    </g>
+  </svg>
+  {showWordmark && (
+    <span class="display-xl text-lg md:text-xl tracking-tightest text-brand-ink">
+      Luminate Energy
+    </span>
+  )}
+</a>

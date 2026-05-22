@@ -1,0 +1,143 @@
+---
+import Layout from '../layouts/Layout.astro';
+import CTAButton from '../components/CTAButton.astro';
+import SectionEyebrow from '../components/SectionEyebrow.astro';
+
+const services = [
+  {
+    label: 'Residential Solar',
+    title: 'Solar systems designed for your home.',
+    body: 'Custom-engineered for your roof, your shade pattern, and your real-world energy use. Tier-1 panels, modern inverters, and a system built to perform for 25+ years.',
+    bullets: [
+      'On-site assessment + shade analysis',
+      'Engineered design tailored to your roof',
+      'Premium panels, inverters, and racking',
+      'Production guarantees on every system',
+    ],
+  },
+  {
+    label: 'Installation',
+    title: 'High-trust, high-quality installs.',
+    body: 'Our crews treat your home like their own. We handle permitting, install, inspections, and utility interconnection so you never get stuck navigating it alone.',
+    bullets: [
+      'Permits + plan sets handled end-to-end',
+      'Clean roof penetrations + watertight flashings',
+      'Tidy conduit runs and electrical work',
+      'Full utility interconnection coordination',
+    ],
+  },
+  {
+    label: 'Homeowner Education',
+    title: 'Clear answers. No pressure.',
+    body: 'You\'ll never get a hard sell. We walk you through how solar actually works, what your real savings look like, and whether it makes sense for your home — even if the answer is "not yet."',
+    bullets: [
+      'Plain-English consultations',
+      'Honest savings projections',
+      'Side-by-side financing comparisons',
+      'Questions answered before, during, and after',
+    ],
+  },
+  {
+    label: 'Post-Install Support',
+    title: 'We stay in your corner.',
+    body: 'Going solar is a 25-year relationship. We\'re here for monitoring, service questions, and warranty support long after your system flips on.',
+    bullets: [
+      'Production monitoring guidance',
+      'Workmanship warranty',
+      'Manufacturer warranty coordination',
+      'Same team you started with — no call centers',
+    ],
+  },
+];
+---
+
+<Layout
+  title="Services — Luminate Energy"
+  description="Residential solar design, installation, education, and post-install support across Texas — handled in-house by Luminate Energy."
+>
+  <!-- HERO -->
+  <section class="container-prose pt-20 md:pt-32 pb-16 md:pb-24">
+    <SectionEyebrow label="Services" number="01" />
+    <h1 class="display-xl text-5xl md:text-7xl lg:text-8xl max-w-4xl mb-8">
+      Everything you need <br />
+      to <span class="accent-serif text-brand-primary">go solar.</span>
+    </h1>
+    <p class="text-lg md:text-2xl text-brand-muted max-w-2xl leading-snug">
+      We handle the whole journey in-house — from your first consultation to
+      the day your meter starts spinning backward, and every year after that.
+    </p>
+  </section>
+
+  <!-- SERVICES -->
+  <section class="hairline-top">
+    {services.map((s, i) => (
+      <article class:list={[
+        'border-b border-brand-line',
+        i % 2 === 1 ? 'bg-white/40' : '',
+      ]}>
+        <div class="container-prose py-20 md:py-28 grid md:grid-cols-[1fr_1.4fr] gap-12 md:gap-20 items-start">
+          <div class="md:sticky md:top-28 h-fit">
+            <div class="flex items-center gap-3 text-xs uppercase tracking-[0.22em] text-brand-muted mb-6">
+              <span class="font-mono tabular-nums">0{i + 1}</span>
+              <span class="h-px w-8 bg-brand-line"></span>
+              <span>{s.label}</span>
+            </div>
+            <h2 class="text-3xl md:text-5xl leading-tight">
+              {s.title.split('.')[0]}<span class="text-brand-primary">.</span>
+            </h2>
+          </div>
+          <div>
+            <p class="text-base md:text-xl text-brand-muted leading-relaxed mb-8 max-w-prose">
+              {s.body}
+            </p>
+            <ul class="space-y-3">
+              {s.bullets.map((b) => (
+                <li class="flex items-start gap-3 text-sm md:text-base">
+                  <svg class="w-5 h-5 text-brand-primary mt-0.5 flex-shrink-0" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                    <polyline points="20 6 9 17 4 12"></polyline>
+                  </svg>
+                  <span>{b}</span>
+                </li>
+              ))}
+            </ul>
+          </div>
+        </div>
+      </article>
+    ))}
+  </section>
+
+  <!-- WHY TEXAS -->
+  <section class="hairline-top bg-brand-ink text-brand-paper">
+    <div class="container-prose py-24 md:py-32 grid md:grid-cols-[1fr_1.4fr] gap-12 md:gap-20 items-center">
+      <div>
+        <p class="text-xs uppercase tracking-[0.22em] text-brand-primary mb-6">Why Texas is going solar</p>
+        <h2 class="text-4xl md:text-6xl text-brand-paper">
+          Sun + rising rates <br /><span class="accent-serif text-brand-primary">= obvious math.</span>
+        </h2>
+      </div>
+      <div class="space-y-6 text-base md:text-lg leading-relaxed text-brand-paper/80 max-w-prose">
+        <p>
+          Texas gets more usable sunlight than almost anywhere in the country.
+          Electricity rates keep climbing. And the home you own is the best
+          place to take back control of your energy bill.
+        </p>
+        <p>
+          Solar isn't just an environmental decision anymore — it's a financial
+          one. We help homeowners run the real numbers and decide for themselves.
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <!-- FINAL CTA -->
+  <section class="container-prose py-24 md:py-32 text-center">
+    <h2 class="text-4xl md:text-6xl mb-8 max-w-3xl mx-auto">
+      See what solar looks like <br />
+      <span class="accent-serif text-brand-primary">for your home.</span>
+    </h2>
+    <p class="text-lg md:text-xl text-brand-muted max-w-xl mx-auto mb-10">
+      Free, no-pressure quote. We'll run the numbers and let you decide.
+    </p>
+    <CTAButton href="/contact/" variant="primary" size="lg">Request your quote</CTAButton>
+  </section>
+</Layout>

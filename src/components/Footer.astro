@@ -1,0 +1,61 @@
+---
+import Logo from './Logo.astro';
+const year = new Date().getFullYear();
+---
+
+<footer class="hairline-top bg-brand-paper">
+  <div class="container-prose py-16 md:py-20 grid gap-12 md:grid-cols-[1.4fr_1fr_1fr_1fr]">
+    <div class="space-y-4 max-w-sm">
+      <Logo />
+      <p class="text-sm text-brand-muted leading-relaxed">
+        On a mission to change lives through clean, renewable energy.
+        Residential solar, installed with integrity.
+      </p>
+    </div>
+
+    <div>
+      <h4 class="text-xs uppercase tracking-widest text-brand-muted mb-4 font-medium">Explore</h4>
+      <ul class="space-y-3 text-sm">
+        <li><a href="/" class="hover:text-brand-primary transition-colors">Home</a></li>
+        <li><a href="/about/" class="hover:text-brand-primary transition-colors">About</a></li>
+        <li><a href="/services/" class="hover:text-brand-primary transition-colors">Services</a></li>
+        <li><a href="/process/" class="hover:text-brand-primary transition-colors">Process</a></li>
+      </ul>
+    </div>
+
+    <div>
+      <h4 class="text-xs uppercase tracking-widest text-brand-muted mb-4 font-medium">Connect</h4>
+      <ul class="space-y-3 text-sm">
+        <li><a href="/contact/" class="hover:text-brand-primary transition-colors">Contact</a></li>
+        <li>
+          <a
+            href="https://instagram.com/luminate.energy"
+            target="_blank"
+            rel="noopener noreferrer"
+            class="hover:text-brand-primary transition-colors"
+          >Instagram</a>
+        </li>
+        <li>
+          <a
+            href="mailto:hello@luminate.solar"
+            class="hover:text-brand-primary transition-colors"
+          >hello@luminate.solar</a>
+        </li>
+      </ul>
+    </div>
+
+    <div>
+      <h4 class="text-xs uppercase tracking-widest text-brand-muted mb-4 font-medium">Service Area</h4>
+      <p class="text-sm text-brand-muted leading-relaxed">
+        Serving Texas homeowners ready to take control of their energy.
+      </p>
+    </div>
+  </div>
+
+  <div class="hairline-top">
+    <div class="container-prose py-6 flex flex-col md:flex-row items-start md:items-center justify-between gap-2 text-xs text-brand-muted">
+      <p>&copy; {year} Luminate Energy LLC. All rights reserved.</p>
+      <p>Built with care in Texas.</p>
+    </div>
+  </div>
+</footer>
