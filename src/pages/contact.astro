@@ -102,6 +102,28 @@ const WEB3FORMS_KEY = import.meta.env.PUBLIC_WEB3FORMS_KEY || '';
             ></textarea>
           </div>
 
+          <div class="pt-2 space-y-3">
+            <p class="text-xs md:text-sm text-brand-muted leading-relaxed">
+              SMS is used to communicate with customers regarding their solar project
+              status and next steps. Messages include weekly account updates, utility
+              approval, inspection scheduling, and responses to customer inquiries. By
+              checking the box below, you agree to receive recurring SMS text messages
+              from <strong>Luminate Energy</strong>. Message frequency varies (up to 2
+              messages per week). Reply <strong>STOP</strong> to opt out,
+              <strong>HELP</strong> for help. Message and data rates may apply. See our
+              <a href="/privacy" class="underline">Privacy Policy</a> for full SMS terms.
+            </p>
+            <label class="flex items-start gap-3 cursor-pointer">
+              <input
+                type="checkbox"
+                name="sms_opt_in"
+                value="yes"
+                class="mt-1 h-4 w-4 accent-brand-primary"
+              />
+              <span class="text-sm text-brand-ink">Opt in for SMS</span>
+            </label>
+          </div>
+
           <div class="pt-4 flex flex-col sm:flex-row sm:items-center gap-4">
             <button
               type="submit"
