@@ -34,21 +34,35 @@ const valueProps = [
     </div>
 
     <div class="container-prose pt-20 md:pt-32 pb-20 md:pb-32">
-      <div class="max-w-4xl">
-        <p class="text-xs uppercase tracking-[0.22em] text-brand-muted mb-6 md:mb-10 animate-fade-in">
-          Luminate Energy &middot; Residential Solar &middot; CA &middot; TX &middot; AR &middot; FL &middot; MO &middot; GA
-        </p>
-        <h1 class="display-xl text-5xl sm:text-6xl md:text-7xl lg:text-8xl mb-6 md:mb-8 animate-fade-up">
-          Power your home <br />
-          <span class="accent-serif text-brand-primary">with the sun.</span>
-        </h1>
-        <p class="text-lg md:text-2xl text-brand-muted max-w-2xl leading-snug mb-10 md:mb-12 animate-fade-up" style="animation-delay:80ms">
-          We design and install residential solar systems built for the long haul —
-          guided by clear education, honest pricing, and craftsmanship you can trust.
-        </p>
-        <div class="flex flex-wrap items-center gap-3 md:gap-4 animate-fade-up" style="animation-delay:160ms">
-          <CTAButton href="/contact/" variant="primary" size="lg">Get your free quote</CTAButton>
-          <CTAButton href="/process/" variant="ghost" size="lg">See how it works</CTAButton>
+      <div class="grid lg:grid-cols-[1.4fr_1fr] gap-12 lg:gap-16 items-center">
+        <div class="max-w-4xl">
+          <p class="text-xs uppercase tracking-[0.22em] text-brand-muted mb-6 md:mb-10 animate-fade-in">
+            Luminate Energy &middot; Residential Solar &middot; CA &middot; TX &middot; AR &middot; FL &middot; MO &middot; GA
+          </p>
+          <h1 class="display-xl text-5xl sm:text-6xl md:text-7xl lg:text-8xl mb-6 md:mb-8 animate-fade-up">
+            Power your home <br />
+            <span class="accent-serif text-brand-primary">with the sun.</span>
+          </h1>
+          <p class="text-lg md:text-2xl text-brand-muted max-w-2xl leading-snug mb-10 md:mb-12 animate-fade-up" style="animation-delay:80ms">
+            We design and install residential solar systems built for the long haul —
+            guided by clear education, honest pricing, and craftsmanship you can trust.
+          </p>
+          <div class="flex flex-wrap items-center gap-3 md:gap-4 animate-fade-up" style="animation-delay:160ms">
+            <CTAButton href="/contact/" variant="primary" size="lg">Get your free quote</CTAButton>
+            <CTAButton href="/process/" variant="ghost" size="lg">See how it works</CTAButton>
+          </div>
+        </div>
+
+        <div class="hidden lg:block animate-fade-up" style="animation-delay:240ms">
+          <div class="relative rounded-2xl overflow-hidden border border-brand-line shadow-sm aspect-[3/4]">
+            <img
+              src="/images/hero-installer-panel.jpg"
+              alt="Luminate Energy installer carrying a solar panel up a residential roof"
+              class="w-full h-full object-cover"
+              loading="eager"
+              fetchpriority="high"
+            />
+          </div>
         </div>
       </div>
     </div>
@@ -85,11 +99,19 @@ const valueProps = [
           Residential solar, <br />
           <span class="accent-serif text-brand-primary">done right.</span>
         </h2>
-        <p class="text-base md:text-lg text-brand-muted leading-relaxed max-w-md">
+        <p class="text-base md:text-lg text-brand-muted leading-relaxed max-w-md mb-8 md:mb-10">
           From the first conversation to the day your system flips on, we
           handle every step in-house — with people who actually pick up the
           phone.
         </p>
+        <div class="relative rounded-2xl overflow-hidden border border-brand-line shadow-sm aspect-[3/4] max-w-sm">
+          <img
+            src="/images/installer-ladder.jpg"
+            alt="Luminate Energy crew member climbing onto a residential rooftop"
+            class="w-full h-full object-cover"
+            loading="lazy"
+          />
+        </div>
       </div>
 
       <div class="space-y-px">
@@ -112,8 +134,16 @@ const valueProps = [
   </section>
 
   <!-- MISSION QUOTE -->
-  <section class="hairline-top hairline-bottom bg-brand-ink text-brand-paper">
-    <div class="container-prose py-24 md:py-36 text-center">
+  <section class="relative hairline-top hairline-bottom bg-brand-ink text-brand-paper overflow-hidden">
+    <img
+      src="/images/mission-silhouette.jpg"
+      alt=""
+      aria-hidden="true"
+      class="absolute inset-0 w-full h-full object-cover opacity-40"
+      loading="lazy"
+    />
+    <div class="absolute inset-0 bg-gradient-to-b from-brand-ink/70 via-brand-ink/60 to-brand-ink/80"></div>
+    <div class="relative container-prose py-24 md:py-36 text-center">
       <p class="text-xs uppercase tracking-[0.22em] text-brand-primary mb-8">Our mission</p>
       <p class="accent-serif text-3xl md:text-5xl lg:text-6xl leading-tight max-w-4xl mx-auto">
         "On a mission to change lives through clean, renewable energy."
